@@ -681,7 +681,7 @@ Class PlasmaRifleHeatCloud : Actor
 		FX58 AAABBBCCCDDDEEEFFFGGGHHHIIIJJJKKKLLLMMMNNNOOOPPP 1
 		{
 			A_FadeOut(0.01);
-			A_ScaleVelocity(0.9);
+			vel *= 0.9;
 		}
 		Stop;
 	}

@@ -588,7 +588,7 @@ Class BruiserDustCloud : Actor
 		X201 A 3 
 		{
 			A_FadeOut(0.023);
-			A_ScaleVelocity(0.97);
+			vel *= 0.97;
 			A_SetScale(Scale.X+0.04);
 			A_SetRoll(roll+10,SPF_INTERPOLATE);
 		}
@@ -597,7 +597,7 @@ Class BruiserDustCloud : Actor
 		X201 B 3 
 		{
 			A_FadeOut(0.023);
-			A_ScaleVelocity(0.97);
+			vel *= 0.97;
 			A_SetScale(Scale.X+0.04);
 			A_SetRoll(roll+10,SPF_INTERPOLATE);
 		}
@@ -606,7 +606,7 @@ Class BruiserDustCloud : Actor
 		X201 C 3 
 		{
 			A_FadeOut(0.023);
-			A_ScaleVelocity(0.97);
+			vel *= 0.97;
 			A_SetScale(Scale.X+0.04);
 			A_SetRoll(roll+10,SPF_INTERPOLATE);
 		}
@@ -615,7 +615,7 @@ Class BruiserDustCloud : Actor
 		X201 D 3 
 		{
 			A_FadeOut(0.023);
-			A_ScaleVelocity(0.97);
+			vel *= 0.97;
 			A_SetScale(Scale.X+0.04);
 			A_SetRoll(roll+10,SPF_INTERPOLATE);
 		}

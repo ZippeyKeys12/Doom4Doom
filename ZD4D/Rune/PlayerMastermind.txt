@@ -126,7 +126,7 @@ Class PlayerMastermind : DemonPlayerBase
 	Overlay.Steps:
 		TNT1 A 12
 		{
-			if(((vel.x*vel.x + vel.y*vel.y) > 1) && A_CheckFloor("Null"))
+			if(((vel.x ** 2 + vel.y ** 2) > 1) && A_CheckFloor("Null"))
 			{
 				A_PlaySound("Player/Demon/MastermindStep",6);
 			}

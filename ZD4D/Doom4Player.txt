@@ -414,7 +414,7 @@ Class Doom4Player : PlayerPawn
 				A_SetInventory("RlyClimb",0);
 				A_GiveInventory("Climbing",1);
 				
-				if (vel.x * vel.x + vel.y * vel.y > 4)
+				if (vel.x ** 2 + vel.y ** 2 > 4)
 				{	A_SetInventory("Climbing",0);	}
 				
 				// Calculate a naive-derivative
@@ -478,7 +478,7 @@ Class Doom4Player : PlayerPawn
 
 				int DistCheck = 24;
 				
-				if (vel.x * vel.x + vel.y * vel.y > 4)
+				if (vel.x ** 2 + vel.y ** 2 > 4)
 				{	return;		}
 				
 				// Abort if way forward is free
@@ -609,9 +609,13 @@ Class Doom4Player : PlayerPawn
 			bSlidesOnWalls = false;
 			
 			if(vel.z < 0) 
-			{	A_ChangeVelocity(vel.x/2,vel.y/2,vel.z/4,CVF_REPLACE); }
+			{
+				vel.x /= 2;
+				vel.y /= 2;
+				vel.z /= 4;
+			}
 			if(vel.z < 5) 
-			{	A_ChangeVelocity(0,0,1); }
+			{	vel.z += 1; }
 			if(!A_CheckBlock("Overlay.LedgeGrab", CBF_DROPOFF, AAPTR_DEFAULT, 0,0,1))
 			{	A_Warp(AAPTR_DEFAULT, 0,0,1, 0, WARPF_INTERPOLATE); }
 			
@@ -1185,12 +1189,12 @@ extend class Doom4Player
 			}
 			else if (waterlevel >= 2)
 			{
-				Vel.Z = 4 * Speed;
+				vel.z = 4 * Speed;
 				user_jumpsDone = 1;
 			}
 			else if (bNoGravity)
 			{
-				Vel.Z = 3.;
+				vel.z = 3.;
 				user_jumpsDone = 1;
 			}
 			else if (level.IsJumpingAllowed())
@@ -1217,7 +1221,7 @@ extend class Doom4Player
 						}
 						if (jumpfac > 0) jumpvelz *= jumpfac;
 
-						Vel.Z += jumpvelz + CountInv("D4HigherJump");
+						vel.z += jumpvelz + CountInv("D4HigherJump");
 						bOnMobj = false;
 						player.jumpTics = -1;
 						if (!(player.cheats & CF_PREDICTING)) 
@@ -1231,9 +1235,9 @@ extend class Doom4Player
 					(user_jumpsDone < CountInv("D4MultiJump") - 1) && 
 					!(GetPlayerInput(MODINPUT_OLDBUTTONS) & BT_JUMP))
 				{
-					if (Vel.Z < 0.0)	Vel.Z = 0.0;
+					if (vel.z < 0.0)	vel.z = 0.0;
 						
-					Vel.Z += (8.2 + CountInv("D4HigherJump"));
+					vel.z += (8.2 + CountInv("D4HigherJump"));
 					user_jumpsDone++;
 					A_PlaySound("Doom4/Player/DoubleJump");
 				}
@@ -1253,12 +1257,13 @@ extend class Doom4Player
 				{
 					int gpi = GetPlayerInput(MODINPUT_BUTTONS);
 					A_ChangeVelocity(
-					((gpi & BT_FORWARD  ) ? .8 : 0) - 
-					((gpi & BT_BACK     ) ? .8 : 0),
-					((gpi & BT_MOVELEFT ) ? .8 : 0) -
-					((gpi & BT_MOVERIGHT) ? .8 : 0),
-					0,CVF_RELATIVE);
-					A_ChangeVelocity(vel.x*.95,vel.y*.95,vel.z,CVF_REPLACE);
+					x: ((gpi & BT_FORWARD	) ? .8 : 0) - 
+					   ((gpi & BT_BACK		) ? .8 : 0),
+					y: ((gpi & BT_MOVELEFT	) ? .8 : 0) -
+					   ((gpi & BT_MOVERIGHT	) ? .8 : 0),
+					flags: CVF_RELATIVE);
+					vel.x *= .95;
+					vel.y *= .95;
 				}
 			}
 		}

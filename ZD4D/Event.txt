@@ -747,7 +747,7 @@ Struct D4DropList play
 						it.amount = int(it.amount * ItemAmountMul[i]);
 						it.bTHRUACTORS = false;
 						it.VelFromAngle(frandom(3,6),random(0,359));
-						it.vel.Z += frandom(1,5);
+						it.vel.z += frandom(1,5);
 						it.A_FaceMovementDirection(0,0);
 						
 					}

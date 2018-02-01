@@ -851,7 +851,7 @@ Class BaronBallImpactVapor : Actor
 			A_SetScale(Scale.X+0.05);
 			if(random(1,2)==2)
 			{
-				A_ScaleVelocity(0.9);
+				vel *= 0.9;
 				A_FadeOut(0.015);
 			}
 		}

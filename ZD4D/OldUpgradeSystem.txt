@@ -741,7 +741,7 @@ Class HoloSelectable : Actor
 			A_SetUserArrayFloat(user_x, 1, x);
 			A_SetUserArrayFloat(user_y, 1, y);
 			A_SetUserArrayFloat(user_z, 1, z);
-			A_ChangeVelocity(-((user_xb-user_xa)/TimeDivider),-((user_yb-user_ya)/TimeDivider),0,CVF_REPLACE);
+			vel = (-((user_xb-user_xa)/TimeDivider), -((user_yb-user_ya)/TimeDivider), 0);
 		}
 	InactiveLoop:
 		M668 "#" 1
@@ -760,8 +760,8 @@ Class HoloSelectable : Actor
 		{
 			if (IsPointerEqual(TracerPtr,NullPtr))	{	return ResolveState("Null");	}
 			if (!CountInv("MenuToken",MasterPtr))	
-			{	
-				A_ChangeVelocity(((user_xb-user_xa)/TimeDivider),((user_yb-user_ya)/TimeDivider),0,CVF_REPLACE);
+			{
+				vel = (((user_xb-user_xa)/TimeDivider), ((user_yb-user_ya)/TimeDivider), 0);
 				return ResolveState("Normalize");	
 			}
 			return ResolveState(null);
@@ -1036,7 +1036,8 @@ Class WeaponUpgradeHolo : Actor
 		}
 		Loop;
 	MoveDelay:
-		"####" "#" 4 A_ChangeVelocity(0,0,ZSpeed * user_dirns)
+		"####" "#" 4
+		{	vel.z += ZSpeed * user_dirns;	}
 		"####" "#" 0 
 		{
 			A_Stop();
@@ -1359,7 +1360,7 @@ Class WeaponUpgradeHolo : Actor
 		{
 			if (!user_dirns)
 			{	return ResolveState("MoveIn");	}
-			A_ChangeVelocity(0,0,-ZSpeed*user_dirns);
+			vel.z += -ZSpeed*user_dirns;
 			return ResolveState(null);
 		}
 		"####" "#" 0 A_Stop

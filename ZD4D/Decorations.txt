@@ -124,8 +124,8 @@ Class D4EmptyBarrelChunk : Actor
 			A_FaceMovementDirection(0,0,0);
 			angle += frandom(-20.0, 20.0);
 			pitch += frandom(-20.0, 20.0);
-			user_speed = sqrt(vel.x*vel.x + vel.y*vel.y + vel.z*vel.z) + random(1,4);
-			A_ChangeVelocity(cos(-pitch)*user_speed, 0, sin(pitch)*user_speed, CVF_RELATIVE);
+			user_speed = vel.Length() + random(1,4);
+			A_ChangeVelocity(x: cos(-pitch)*user_speed, y: sin(pitch)*user_speed, flags: CVF_RELATIVE);
 			user_roll = frandom(2.0, 15.0) * randompick(1,-1);
 		}
 		ICEC A 1 A_SetRoll(roll + user_roll, SPF_INTERPOLATE);
@@ -338,7 +338,7 @@ Class TitlemapFlares : Actor
 			A_SetRoll(roll-1);
 			if(random(1,5)==5)
 			{
-				A_ChangeVelocity(0,random(5,-5),0);
+				vel.y += random(5,-5);
 			}
 		}
 		Goto Spawn+1;

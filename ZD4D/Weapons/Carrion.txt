@@ -531,7 +531,7 @@ Class CarrionFirePillar : Actor
 			user_dist = GetDistance(true,TracerPtr);
 			user_speed = (user_dist >= 1536) ? (user_dist / 17.5) : speed;
 			//user_speed = 50;
-			A_ChangeVelocity(0,0,-user_speed,CVF_REPLACE);
+			A_ChangeVelocity(z: -user_speed, flags: CVF_REPLACE); //Velocities default to 0
 		}
 		TNT1 A 1
 		{
@@ -792,23 +792,44 @@ Class CarrionFlameFast : Actor
 		}
 	S1:
 		X052 ABCDEFGHIJKLMNOPQRS 1
-		{	A_ChangeVelocity(vel.x * ScaleDown, vel.y * ScaleDown, vel.z + frandom(VelUpMin,VelUpMax),CVF_REPLACE);	}
+		{
+			//TODO see if vel.xy is a reference or a copy
+			vel.x *= ScaleDown;
+			vel.y *= ScaleDown;
+			vel.z += frandom(VelUpMin,VelUpMax);
+		}
 		Stop;
 	S2:
 		X053 ABCDEFGHIJKLMNOPQRSTU 1
-		{	A_ChangeVelocity(vel.x * ScaleDown, vel.y * ScaleDown, vel.z + frandom(VelUpMin,VelUpMax),CVF_REPLACE);	}
+		{
+			vel.x *= ScaleDown;
+			vel.y *= ScaleDown;
+			vel.z += frandom(VelUpMin,VelUpMax);
+		}
 		Stop;
 	S3:
 		X054 ABCDEFGHIJKLMNOPQRS 1
-		{	A_ChangeVelocity(vel.x * ScaleDown, vel.y * ScaleDown, vel.z + frandom(VelUpMin,VelUpMax),CVF_REPLACE);	}
+		{
+			vel.x *= ScaleDown;
+			vel.y *= ScaleDown;
+			vel.z += frandom(VelUpMin,VelUpMax);
+		}
 		Stop;
 	S4:
 		X055 ABCDEFGHIJKLMNOPQRS 1
-		{	A_ChangeVelocity(vel.x * ScaleDown, vel.y * ScaleDown, vel.z + frandom(VelUpMin,VelUpMax),CVF_REPLACE);	}
+		{
+			vel.x *= ScaleDown;
+			vel.y *= ScaleDown;
+			vel.z += frandom(VelUpMin,VelUpMax);
+		}
 		Stop;
 	S5:
 		X056 ABCDEFGHIJKLMNOPQR 1 bright
-		{	A_ChangeVelocity(vel.x * ScaleDown, vel.y * ScaleDown, vel.z + frandom(VelUpMin,VelUpMax),CVF_REPLACE);	}
+		{
+			vel.x *= ScaleDown;
+			vel.y *= ScaleDown;
+			vel.z += frandom(VelUpMin,VelUpMax);
+		}
 		Stop;
 	}
 }

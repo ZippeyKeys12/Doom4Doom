@@ -116,7 +116,7 @@ Class D4Demon : D4AbstractMonster
 		}
 		D4DG ABCDABCD 4 // full acceleration
 		{
-			if(A_CheckBlock("Null",0,DefPtr,speed) || (vel.x==0 && vel.y==0))	//when it stops
+			if(A_CheckBlock("Null",0,DefPtr,speed) || (vel.xy.Length()==0))	//when it stops
 			{
 				return ResolveState("CrashedSomewhere");
 			}
@@ -126,11 +126,11 @@ Class D4Demon : D4AbstractMonster
 		}
 		D4DG ABCD 4 //slowing down
 		{
-			if(A_CheckBlock("Null",0,DefPtr,speed) || (vel.x==0 && vel.y==0))	//when it stops
+			if(A_CheckBlock("Null",0,DefPtr,speed) || (vel.xy.Length()==0))	//when it stops
 			{
 				return ResolveState("CrashedSomewhere");
 			}
-			A_ChangeVelocity(vel.x*0.8,vel.y*0.8,vel.z*0.8,CVF_REPLACE);
+			vel *= 0.8;
 			return ResolveState(null);
 		}
 		Goto See;
@@ -603,7 +603,7 @@ Class D4OldDemon : D4AbstractMonster // : Demon //replaces Demon
 		Goto GloryEnd;
 	GloryEnd3:
 		"####" AAAA 1 A_Warp(AAPTR_TARGET,-50,0,0,180,WARPF_NOCHECKPOSITION);
-		"####" I 0 A_ChangeVelocity(-8,0,10,CVF_RELATIVE);
+		"####" I 0 A_ChangeVelocity(x: -8, y: 10, flags: CVF_RELATIVE);
 		Goto GloryEnd;
 	}
 }

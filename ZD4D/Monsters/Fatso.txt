@@ -79,7 +79,7 @@ Class D4FatsoTech : D4AbstractBiggie
 		{	
 			HQ = GetCvar("HQEffects");
 			A_Playsound("Doom4/Monsters/Mancubus/Melee",CHAN_AUTO);
-			A_ChangeVelocity(0,0,10); //jump willy!!
+			vel.z += 10; //jump willy!!
 			if (HQ)
 			{
 				A_SpawnItemEx("FatsoJumpGhost",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION);
@@ -668,7 +668,7 @@ Class D4FatsoHell : D4AbstractBiggie
 			FAT2 G 1 
 			{	
 				A_Playsound("Doom4/Monsters/Mancubus/Melee",CHAN_AUTO);
-				A_ChangeVelocity(0,0,10); //jump willy!!
+				vel.z += 10; //jump willy!!
 				if (HQ)
 				{
 					A_SpawnItemEx("Fatso2JumpGhost",0,0,0,0,0,0,0,SXF_NOCHECKPOSITION);
@@ -971,7 +971,7 @@ Class FatsoFlamethrower : D4AbstractMissile
 			A_FadeOut(0.035);
 			if(user_counter==3)
 			{
-				A_ScaleVelocity(0.7);
+				vel *= 0.7;
 				user_counter = 0;
 			}
 			user_counter++;
