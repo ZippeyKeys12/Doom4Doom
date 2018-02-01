@@ -610,8 +610,7 @@ Class Doom4Player : PlayerPawn
 			
 			if(vel.z < 0) 
 			{
-				vel.x /= 2;
-				vel.y /= 2;
+				vel.xy /= 2;
 				vel.z /= 4;
 			}
 			if(vel.z < 5) 
@@ -1262,8 +1261,7 @@ extend class Doom4Player
 					y: ((gpi & BT_MOVELEFT	) ? .8 : 0) -
 					   ((gpi & BT_MOVERIGHT	) ? .8 : 0),
 					flags: CVF_RELATIVE);
-					vel.x *= .95;
-					vel.y *= .95;
+					vel.xy *= .95;
 				}
 			}
 		}

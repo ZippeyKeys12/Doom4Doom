@@ -330,7 +330,7 @@ Class D4Archvile : D4AbstractBiggie
 		Goto GloryEnd;
 	GloryEnd3:
 		"####" AAAA 1 A_Warp(AAPTR_TARGET,-50,0,0,180,WARPF_NOCHECKPOSITION);
-		"####" I 0 A_ChangeVelocity(-8,0,10,CVF_RELATIVE);
+		"####" I 0 A_ChangeVelocity(x: -8, z: 10, flags: CVF_RELATIVE);
 		Goto GloryEnd;
 
 	//------------------------------------------------------------------------
@@ -815,7 +815,7 @@ Class D4OldArchVile : D4AbstractBiggie // ArchVile replaces ArchVile
 		Goto GloryEnd;
 	GloryEnd3:
 		"####" AAAA 1 A_Warp(AAPTR_TARGET,-50,0,0,180,WARPF_NOCHECKPOSITION);
-		"####" I 0 A_ChangeVelocity(-8,0,10,CVF_RELATIVE);
+		"####" I 0 A_ChangeVelocity(x: -8, z: 10, flags: CVF_RELATIVE);
 		Goto GloryEnd;
 	//------------------------------------------------------------------------
 	// End of Stagger / Glory Kill states
@@ -908,33 +908,33 @@ Class FTFlameTrail2 : Actor
 		TNT1 A 0 NoDelay A_Jump(256,"F1","F2","F3","F4","F5");
 	F1:
 		X052 AB 2 bright;
-		X052 CDEFGH 3 bright A_ScaleVelocity(0.92);
-		X052 IJKLMNO 2 bright A_ScaleVelocity(0.9);
-		X052 PQRS 1 bright A_ScaleVelocity(0.87);
+		X052 CDEFGH 3 bright {	vel *= 0.92;	}
+		X052 IJKLMNO 2 bright {	vel *= 0.9;	}
+		X052 PQRS 1 bright {	vel *= 0.87;	}
 		Stop;
 	F2:
 		X053 AB 2 bright;
-		X053 CDEFGHIJ 3 bright A_ScaleVelocity(0.92);
-		X053 KLMN 2 bright A_ScaleVelocity(0.9);
-		X053 OPQRS 1 bright A_ScaleVelocity(0.87);
+		X053 CDEFGHIJ 3 bright {	vel *= 0.92;	}
+		X053 KLMN 2 bright {	vel *= 0.9;	}
+		X053 OPQRS 1 bright {	vel *= 0.87;	}
 		Stop;
 	F3:
 		X054 ABCD 2 bright;
-		X054 EFGHIJK 3 bright A_ScaleVelocity(0.92);
-		X054 LMNO 2 bright A_ScaleVelocity(0.9);
-		X054 PQRS 2 bright A_ScaleVelocity(0.87);
+		X054 EFGHIJK 3 bright {	vel *= 0.92;	}
+		X054 LMNO 2 bright {	vel *= 0.9;	}
+		X054 PQRS 2 bright {	vel *= 0.87;	}
 		Stop;
 	F4:
 		X055 ABC 2 bright;
-		X055 DEFGHIJKLMN 3 bright A_ScaleVelocity(0.92);
-		X055 OP 2 bright A_ScaleVelocity(0.9);
-		X055 QRS 2 bright A_ScaleVelocity(0.87);
+		X055 DEFGHIJKLMN 3 bright {	vel *= 0.92;	}
+		X055 OP 2 bright {	vel *= 0.9;	}
+		X055 QRS 2 bright {	vel *= 0.87;	}
 		Stop;
 	F5:
-		X056 ABCDE 2 bright; //A_ScaleVelocity(0.98)
-		X056 FGHIJ 3 bright A_ScaleVelocity(0.92);
-		X056 KLMN 2 bright A_ScaleVelocity(0.9);
-		X056 OPQR 1 bright A_ScaleVelocity(0.87);
+		X056 ABCDE 2 bright; //{	vel *= 0.98;	}
+		X056 FGHIJ 3 bright {	vel *= 0.92;	}
+		X056 KLMN 2 bright {	vel *= 0.9;	}
+		X056 OPQR 1 bright {	vel *= 0.87;	}
 		Stop;
 	}
 }

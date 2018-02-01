@@ -225,7 +225,7 @@ Class BFGRedirector : CustomInventory
 					{
 						A_GiveInventory("RedirectedToken",1);
 						A_FaceTracer(0,0,0,0,FAF_MIDDLE);
-						A_ChangeVelocity(cos(pitch)*speed, 0, -sin(pitch)*speed,CVF_REPLACE|CVF_RELATIVE);
+						A_ChangeVelocity(x: cos(pitch)*speed, z: -sin(pitch)*speed, flags: CVF_REPLACE|CVF_RELATIVE);
 						return true;
 					}
 				}
@@ -389,7 +389,7 @@ Class BFG9000Shot : BFGProjectile
 			user_boosted = CountInv("BFGUpgrade3",TargetPtr);
 			if (user_boosted)
 			{
-				A_ScaleVelocity(2);
+				vel *= 2;
 				A_SetSpeed(40);
 			}
 		}
@@ -693,7 +693,7 @@ Class BFGImpactVapor : Actor
 			A_SetScale(Scale.X+0.08);
 			if(random(1,3)==3)
 			{
-				A_ScaleVelocity(0.8);
+				vel *= 0.8;
 			}
 		}
 		Goto Spawn+1;

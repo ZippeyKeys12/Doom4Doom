@@ -647,7 +647,7 @@ Class D4PinataCarrion : CustomInventory
 					invoker.count = DelayVacuum;
 					PlrCheck.SetFlying(self, true);
 					A_FaceTracer(0,0,0,0,FAF_MIDDLE);
-					A_ChangeVelocity(cos(pitch)*PSpeed,0,-sin(pitch)*PSpeed,CVF_RELATIVE|CVF_REPLACE);
+					A_ChangeVelocity(x: cos(pitch)*PSpeed, z: -sin(pitch)*PSpeed, flags: CVF_RELATIVE|CVF_REPLACE);
 					if (Distance3D(tracer) <= 32)
 					{	SetOrigin(tracer.pos, true); A_Stop(); PlrCheck.SetFlying(self, false);	}
 				}

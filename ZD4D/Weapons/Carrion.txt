@@ -793,41 +793,35 @@ Class CarrionFlameFast : Actor
 	S1:
 		X052 ABCDEFGHIJKLMNOPQRS 1
 		{
-			//TODO see if vel.xy is a reference or a copy
-			vel.x *= ScaleDown;
-			vel.y *= ScaleDown;
+			vel.xy *= ScaleDown;
 			vel.z += frandom(VelUpMin,VelUpMax);
 		}
 		Stop;
 	S2:
 		X053 ABCDEFGHIJKLMNOPQRSTU 1
 		{
-			vel.x *= ScaleDown;
-			vel.y *= ScaleDown;
+			vel.xy *= ScaleDown;
 			vel.z += frandom(VelUpMin,VelUpMax);
 		}
 		Stop;
 	S3:
 		X054 ABCDEFGHIJKLMNOPQRS 1
 		{
-			vel.x *= ScaleDown;
-			vel.y *= ScaleDown;
+			vel.xy *= ScaleDown;
 			vel.z += frandom(VelUpMin,VelUpMax);
 		}
 		Stop;
 	S4:
 		X055 ABCDEFGHIJKLMNOPQRS 1
 		{
-			vel.x *= ScaleDown;
-			vel.y *= ScaleDown;
+			vel.xy *= ScaleDown;
 			vel.z += frandom(VelUpMin,VelUpMax);
 		}
 		Stop;
 	S5:
 		X056 ABCDEFGHIJKLMNOPQR 1 bright
 		{
-			vel.x *= ScaleDown;
-			vel.y *= ScaleDown;
+			vel.xy *= ScaleDown;
 			vel.z += frandom(VelUpMin,VelUpMax);
 		}
 		Stop;

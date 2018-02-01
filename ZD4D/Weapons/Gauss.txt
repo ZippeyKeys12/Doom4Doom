@@ -135,9 +135,9 @@ Class D4GaussCannon : Doom4Weapon
 			if (vel.z != 0.0 && pitch > 0.0)
 			{	
 				if (vel.z > 0)
-				{	A_ChangeVelocity(-cos(-pitch)*14,0,sin(pitch)*14,CVF_RELATIVE);	}
+				{	A_ChangeVelocity(x: -cos(-pitch)*14, z: sin(pitch)*14, flags: CVF_RELATIVE);	}
 				else
-				{	A_ChangeVelocity(-cos(-pitch)*14,0,sin(pitch)*14,CVF_RELATIVE|CVF_REPLACE);	}
+				{	A_ChangeVelocity(x: -cos(-pitch)*14, z: sin(pitch)*14, flags: CVF_RELATIVE|CVF_REPLACE);	}
 			}
 			
 			A_AlertMonsters();
@@ -381,9 +381,9 @@ Class D4GaussCannon : Doom4Weapon
 					if (vel.z != 0.0 && pitch > 0.0)
 					{	
 						if (vel.z > 0)
-						{	A_ChangeVelocity(-cos(-pitch)*32,0,sin(pitch)*32,CVF_RELATIVE);	}
+						{	A_ChangeVelocity(x: -cos(-pitch)*32, z: sin(pitch)*32, flags: CVF_RELATIVE);	}
 						else
-						{	A_ChangeVelocity(-cos(-pitch)*32,0,sin(pitch)*32,CVF_RELATIVE|CVF_REPLACE);	}
+						{	A_ChangeVelocity(x: -cos(-pitch)*32, z: sin(pitch)*32, flags: CVF_RELATIVE|CVF_REPLACE);	}
 					}
 					A_SetPitch(pitch-8.0);
 					A_TakeInventory("AltFireToken",32767,0);

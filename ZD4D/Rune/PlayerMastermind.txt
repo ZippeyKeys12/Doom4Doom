@@ -299,7 +299,7 @@ Class SMMPlayerPlasmaScatter : SMMPlayerPlasma
 		A_FaceMovementDirection();
 		angle += frandom(-5.0, 5.0);
 		pitch += frandom(-5.0, 5.0);
-		A_ChangeVelocity(cos(pitch) * speed, 0, -sin(pitch)*speed, CVF_RELATIVE|CVF_REPLACE);
+		A_ChangeVelocity(x: cos(pitch) * speed, z: -sin(pitch)*speed, flags: CVF_RELATIVE|CVF_REPLACE);
 		Super.PostBeginPlay();
 	}
 }

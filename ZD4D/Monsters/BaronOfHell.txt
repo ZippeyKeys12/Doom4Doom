@@ -302,7 +302,7 @@ Class D4BaronOfHell : D4AbstractBiggie
 			{
 				A_FaceTarget(0,0,0,0,FAF_TOP,GetDistance(true)/5.0);
 			}
-			A_ChangeVelocity(cos(pitch)*(GetDistance(true)/25) ,0, -sin(pitch)*(GetDistance(true)/11)  ,CVF_RELATIVE|CVF_REPLACE);
+			A_ChangeVelocity(x: cos(pitch)*(GetDistance(true)/25), z: -sin(pitch)*(GetDistance(true)/11), flags: CVF_RELATIVE|CVF_REPLACE);
 		}
 		E01L A 1;
 		
@@ -575,7 +575,7 @@ Class D4BaronOfHell : D4AbstractBiggie
 		Goto GloryEnd;
 	GloryEnd3:
 		E01I AAAA 1 A_Warp(AAPTR_TARGET,-50,0,0,180,WARPF_NOCHECKPOSITION);
-		"####" I 0 A_ChangeVelocity(-8,0,10,CVF_RELATIVE);
+		"####" I 0 A_ChangeVelocity(x: -8, z: 10, flags: CVF_RELATIVE);
 		Goto GloryEnd;
 	}
 }
@@ -1214,7 +1214,7 @@ Class D4OldBaronOfHell : D4AbstractBiggie // : BaronOfHell
 		Goto GloryEnd;
 	GloryEnd3:
 		"####" AAAA 1 A_Warp(AAPTR_TARGET,-50,0,0,180,WARPF_NOCHECKPOSITION);
-		"####" I 0 A_ChangeVelocity(-8,0,10,CVF_RELATIVE);
+		"####" I 0 A_ChangeVelocity(x: -8, z: 10, flags: CVF_RELATIVE);
 		Goto GloryEnd;
 	}
 }

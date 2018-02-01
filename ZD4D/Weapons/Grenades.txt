@@ -782,7 +782,7 @@ Class GrenadeSmoke : Actor
 		{
 			A_SetRoll(roll + user_add, SPF_INTERPOLATE);
 			A_FadeOut(0.015);
-			//A_ScaleVelocity(0.986);
+			//vel *= 0.986;
 			A_SetScale(Scale.X+0.01);
 		}
 		Loop;
