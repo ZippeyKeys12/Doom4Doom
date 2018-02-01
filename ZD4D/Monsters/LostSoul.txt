@@ -155,7 +155,7 @@ Class D4LostSoulNoCash : D4AbstractMonster 		//see at the bottom of the file for
 			if (bFRIENDLY)
 			{
 				A_FaceTarget(0,0,0,0,FAF_MIDDLE);
-				A_ChangeVelocity(cos(pitch) * 20, 0, -sin(pitch) * 20,CVF_RELATIVE|CVF_REPLACE);
+				A_ChangeVelocity(x: cos(pitch) * 20, z: -sin(pitch) * 20, flags: CVF_RELATIVE|CVF_REPLACE);
 				if (!target || target.health < 1)
 					return ResolveState("See");
 								

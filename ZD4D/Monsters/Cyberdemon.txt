@@ -410,7 +410,7 @@ Class D4Cyberdemon : D4AbstractBoss
 		Goto GloryEnd;
 	GloryEnd3:
 		"####" AAAA 1 A_Warp(AAPTR_TARGET,-50,0,0,180,WARPF_NOCHECKPOSITION);
-		"####" I 0 A_ChangeVelocity(-8,0,10,CVF_RELATIVE);
+		"####" I 0 A_ChangeVelocity(x: -8, z: 10, flags: CVF_RELATIVE);
 		Goto GloryEnd;
 	}
 }
@@ -1013,7 +1013,7 @@ Class D4OldCyberdemon : D4AbstractBoss // : Cyberdemon
 		Goto GloryEnd;
 	GloryEnd3:
 		"####" AAAA 1 A_Warp(AAPTR_TARGET,-50,0,0,180,WARPF_NOCHECKPOSITION);
-		"####" I 0 A_ChangeVelocity(-8,0,10,CVF_RELATIVE);
+		"####" I 0 A_ChangeVelocity(x: -8, z: 10, flags: CVF_RELATIVE);
 		Goto GloryEnd;
 	}
 }

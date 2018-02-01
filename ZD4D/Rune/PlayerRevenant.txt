@@ -161,8 +161,7 @@ Class PlayerRevenant : DemonPlayerBase
 				y: ((gpi & BT_MOVELEFT ) ? .5 : 0) -
 				   ((gpi & BT_MOVERIGHT) ? .5 : 0),
 				flags: CVF_RELATIVE);
-				vel.x *= .97;
-				vel.y *= .97;
+				vel.xy *= .97;
 				A_PlaySound("Player/Demon/Revenant/JetPackStartLoop",7,1,1);
 				A_GiveInventory("RevenantFlyingToken",1);
 				A_TakeInventory("JetpackFuel",1);

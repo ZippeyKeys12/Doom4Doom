@@ -828,7 +828,9 @@ Class MGMiniMissile : FastProjectile
 			bNoGravity = bDropoff =  bMissile = false;
 			A_ChangeLinkFlags(false);
 			A_Gravity();
-			A_ChangeVelocity(frandom(-0.3,0.3),frandom(-0.3,0.3),-9,CVF_REPLACE);
+			vel.x=frandom(-0.3,0.3);
+			vel.y=frandom(-0.3,0.3);
+			vel.z=-9;
 		}
 	LoopDropout:
 		SWMS A 1 Bright 

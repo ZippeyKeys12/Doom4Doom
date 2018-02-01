@@ -327,7 +327,7 @@ Class PainElementalExplosionSpriteSlower : Actor
 		{
 			A_FadeOut(0.03);
 			A_SetScale(Scale.X+0.2);
-			A_ScaleVelocity(0.85);
+			vel *= 0.85;
 		}
 		Wait;
 	}

@@ -741,7 +741,9 @@ Class HoloSelectable : Actor
 			A_SetUserArrayFloat(user_x, 1, x);
 			A_SetUserArrayFloat(user_y, 1, y);
 			A_SetUserArrayFloat(user_z, 1, z);
-			vel = (-((user_xb-user_xa)/TimeDivider), -((user_yb-user_ya)/TimeDivider), 0);
+			vel.x = -(user_xb-user_xa)/TimeDivider;
+			vel.y = -(user_yb-user_ya)/TimeDivider;
+			vel.z = 0;
 		}
 	InactiveLoop:
 		M668 "#" 1
@@ -761,7 +763,9 @@ Class HoloSelectable : Actor
 			if (IsPointerEqual(TracerPtr,NullPtr))	{	return ResolveState("Null");	}
 			if (!CountInv("MenuToken",MasterPtr))	
 			{
-				vel = (((user_xb-user_xa)/TimeDivider), ((user_yb-user_ya)/TimeDivider), 0);
+				vel.x = (user_xb-user_xa)/TimeDivider;
+				vel.y = (user_yb-user_ya)/TimeDivider;
+				vel.z = 0;
 				return ResolveState("Normalize");	
 			}
 			return ResolveState(null);

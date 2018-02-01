@@ -362,9 +362,9 @@ Class MCBloodParticle : Actor
 		{
 			Thing_ChangeTID(0,0);
 			A_FaceMovementDirection();
-			//Vector2 ve2 = (vel.x, vel.y);
+			//Vector2 ve2 = vel.xy;
 			//user_vel = ve2.Length() * VelMul;
-			user_vel = sqrt((vel.x * vel.x) + (vel.y * vel.y)) * VelMul;
+			user_vel = vel.xy.Length() * VelMul;
 			user_pitch = pitch;
 			user_angle = angle;
 		}

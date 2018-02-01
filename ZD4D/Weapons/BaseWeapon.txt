@@ -913,7 +913,7 @@ Class BulletTracerFX : Actor
 		A_FaceTracer();
 		//A_FaceMovementDirection();
 		//pitch *= -1;
-		A_ChangeVelocity(cos(pitch), 0, sin(pitch), CVF_RELATIVE|CVF_REPLACE);
+		A_ChangeVelocity(x: cos(pitch), z: sin(pitch), flags: CVF_RELATIVE|CVF_REPLACE);
 	}
 	
 	Default 

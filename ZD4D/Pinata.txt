@@ -334,7 +334,7 @@ Class D4PinataArmor : D4ArmorBasePickup
 				invoker.count = DelayVacuum;
 				PlrCheck.SetFlying(invoker, true);
 				A_FaceTracer(0,0,0,0,FAF_MIDDLE);
-				A_ChangeVelocity(cos(pitch)*PSpeed,0,-sin(pitch)*PSpeed,CVF_RELATIVE|CVF_REPLACE);
+				A_ChangeVelocity(x: cos(pitch)*PSpeed, z: -sin(pitch)*PSpeed, flags: CVF_RELATIVE|CVF_REPLACE);
 				if (Distance3D(invoker.tracer) <= 32)
 				{	SetOrigin(invoker.tracer.pos, true); A_Stop(); PlrCheck.SetFlying(invoker, false);	}
 			}
@@ -404,7 +404,7 @@ Class D4PinataHealth : D4Stimpack
 				count = DelayVacuum;
 				PlrCheck.SetFlying(self, true);
 				A_FaceTracer(0,0,0,0,FAF_MIDDLE);
-				A_ChangeVelocity(cos(pitch)*PSpeed,0,-sin(pitch)*PSpeed,CVF_RELATIVE|CVF_REPLACE);
+				A_ChangeVelocity(x: cos(pitch)*PSpeed, z: -sin(pitch)*PSpeed, flags: CVF_RELATIVE|CVF_REPLACE);
 				if (Distance3D(tracer) <= 32)
 				{	SetOrigin(tracer.pos, true); A_Stop(); PlrCheck.SetFlying(self, false);	}
 			}
@@ -475,7 +475,7 @@ Class D4PinataBullets : D4Bullets
 				count = DelayVacuum;
 				PlrCheck.SetFlying(self, true);
 				A_FaceTracer(0,0,0,0,FAF_MIDDLE);
-				A_ChangeVelocity(cos(pitch)*PSpeed,0,-sin(pitch)*PSpeed,CVF_RELATIVE|CVF_REPLACE);
+				A_ChangeVelocity(x: cos(pitch)*PSpeed, z: -sin(pitch)*PSpeed, flags: CVF_RELATIVE|CVF_REPLACE);
 				if (Distance3D(tracer) <= 32)
 				{	SetOrigin(tracer.pos, true); A_Stop(); PlrCheck.SetFlying(self, false);	}
 			}
@@ -554,7 +554,7 @@ Class D4PinataShells : D4Shells
 				count = DelayVacuum;
 				PlrCheck.SetFlying(self, true);
 				A_FaceTracer(0,0,0,0,FAF_MIDDLE);
-				A_ChangeVelocity(cos(pitch)*PSpeed,0,-sin(pitch)*PSpeed,CVF_RELATIVE|CVF_REPLACE);
+				A_ChangeVelocity(x: cos(pitch)*PSpeed, z: -sin(pitch)*PSpeed, flags: CVF_RELATIVE|CVF_REPLACE);
 				if (Distance3D(tracer) <= 32)
 				{	SetOrigin(tracer.pos, true); A_Stop(); PlrCheck.SetFlying(self, false);	}
 			}
@@ -634,7 +634,7 @@ Class D4PinataCells : D4Cells
 				count = DelayVacuum;
 				PlrCheck.SetFlying(self, true);
 				A_FaceTracer(0,0,0,0,FAF_MIDDLE);
-				A_ChangeVelocity(cos(pitch)*PSpeed,0,-sin(pitch)*PSpeed,CVF_RELATIVE|CVF_REPLACE);
+				A_ChangeVelocity(x: cos(pitch)*PSpeed, z: -sin(pitch)*PSpeed, flags: CVF_RELATIVE|CVF_REPLACE);
 				if (Distance3D(tracer) <= 32)
 				{	SetOrigin(tracer.pos, true); A_Stop(); PlrCheck.SetFlying(self, false);	}
 			}
@@ -711,7 +711,7 @@ Class D4PinataRockets : D4Rockets
 				count = DelayVacuum;
 				PlrCheck.SetFlying(self, true);
 				A_FaceTracer(0,0,0,0,FAF_MIDDLE);
-				A_ChangeVelocity(cos(pitch)*PSpeed,0,-sin(pitch)*PSpeed,CVF_RELATIVE|CVF_REPLACE);
+				A_ChangeVelocity(x: cos(pitch)*PSpeed, z: -sin(pitch)*PSpeed, flags: CVF_RELATIVE|CVF_REPLACE);
 				if (Distance3D(tracer) <= 32)
 				{	SetOrigin(tracer.pos, true); A_Stop(); PlrCheck.SetFlying(self, false);	}
 			}
@@ -788,7 +788,7 @@ Class D4PinataBFG : D4BFGAmmo
 				count = DelayVacuum;
 				PlrCheck.SetFlying(self, true);
 				A_FaceTracer(0,0,0,0,FAF_MIDDLE);
-				A_ChangeVelocity(cos(pitch)*PSpeed,0,-sin(pitch)*PSpeed,CVF_RELATIVE|CVF_REPLACE);
+				A_ChangeVelocity(x: cos(pitch)*PSpeed, z: -sin(pitch)*PSpeed, flags: CVF_RELATIVE|CVF_REPLACE);
 				if (Distance3D(tracer) <= 32)
 				{	SetOrigin(tracer.pos, true); A_Stop(); PlrCheck.SetFlying(self, false);	}
 			}

@@ -124,7 +124,7 @@ Class D4EmptyBarrelChunk : Actor
 			A_FaceMovementDirection(0,0,0);
 			angle += frandom(-20.0, 20.0);
 			pitch += frandom(-20.0, 20.0);
-			user_speed = vel.Length() + random(1,4);
+			user_speed = vel.xy.Length() + random(1,4);
 			A_ChangeVelocity(x: cos(-pitch)*user_speed, y: sin(pitch)*user_speed, flags: CVF_RELATIVE);
 			user_roll = frandom(2.0, 15.0) * randompick(1,-1);
 		}
@@ -236,7 +236,7 @@ Class TitleMapSmoke : Actor
 				A_SetScale(Scale.X+0.8);
 			}
 			A_FadeOut(0.007);
-			A_ScaleVelocity(0.98);
+			vel *= 0.98;
 		}
 		Goto Spawn+1;
 	}
@@ -289,7 +289,7 @@ Class TitleMapSmokeOrangeIsh : Actor
 			}
 			A_FadeOut(0.001);
 			A_SetRoll(roll-1);
-			//A_ScaleVelocity(0.98);
+			//vel *= .98;
 		}
 		Goto Spawn+1;
 	}

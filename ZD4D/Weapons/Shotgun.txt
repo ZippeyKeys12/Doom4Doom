@@ -663,7 +663,7 @@ Class D4ShotgunGrenade : FastProjectile
 	States
 	{
 	Spawn:
-		GRNL A 2 Bright A_ChangeVelocity(0,0,-0.6);
+		GRNL A 2 Bright {	vel.z-=0.6;	}
 		Loop;
 	Death:
 		TNT1 A 0 
